@@ -3,9 +3,8 @@
   --padding-height: 4.8rem;
 
   --color-sidebar-bg: #0c4a6e;
-  --color-sidebar-text: #e0f2fe;
+  --color-sidebar-text: #f0f9ff;
   --color-item-select: #0369a1;
-
 }
 
 * {
@@ -19,7 +18,7 @@ html {
 }
 
 body {
-  font-family: "Rubik", sans-serif;
+  font-family: "Roboto", sans-serif;
   line-height: 1;
   font-weight: 400;
   font-size: 1.6rem;
@@ -30,12 +29,11 @@ body {
   height: 100%;
 }
 
-
 .container {
   height: 100%;
   display: grid;
   grid-template-columns: 30rem 1fr;
-  grid-template-rows: 15rem 1fr;
+  grid-template-rows: 16rem 1fr;
   grid-template-areas:
     "nav menu"
     "nav main";
@@ -52,7 +50,6 @@ body {
   grid-area: nav;
   color: var(--color-sidebar-text);
   height: 100vh;
-  
 }
 
 .logo-container {
@@ -78,7 +75,7 @@ body {
   padding: 3.2rem 0;
   display: flex;
   flex-direction: column;
-  height: calc(100% - calc(2*var(--padding-logo) + var(--padding-height)));
+  height: calc(100% - calc(2 * var(--padding-logo) + var(--padding-height)));
 }
 
 nav > ul {
@@ -89,7 +86,7 @@ nav > ul {
   display: flex;
   align-items: center;
   gap: 1.6rem;
-  padding: 1.6rem;
+  padding: 1.6rem 3.2rem;
 }
 
 .nav-icon {
@@ -101,8 +98,7 @@ nav > ul {
   display: flex;
   flex-direction: column;
   margin-top: 8rem;
-
-  
+  letter-spacing: 0.2ch;
 }
 
 .other-items {
@@ -113,6 +109,7 @@ a:link,
 a:visited {
   text-decoration: none;
   color: currentColor;
+  /* transition: all .1s ease-in; */
 }
 
 a:hover,
@@ -125,11 +122,127 @@ a:active {
 }
 
 /*******************************/
-.menu {
-  background-color: aquamarine;
+
+/*******************************/
+/*************HEADER************/
+.header {
+  background-color: #eff6ff;
   grid-area: menu;
+  padding: 2rem 8rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 3fr 4fr;
+  grid-template-areas:
+    "search user"
+    "welcome actions";
+  gap: 1.2rem;
 }
 
+/* .header > * {
+  outline: 1px solid midnightblue;
+} */
+
+.search {
+  grid-area: search;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.search-icon {
+  height: 2.4rem;
+}
+
+.search-field {
+  background-color: #bfdbfe;
+  height: 3.2rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.8rem;
+  width: 100%;
+  border: 1px solid #93c5fd;
+  border-radius: 1.6rem;
+}
+
+.user {
+  grid-area: user;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 2.4rem;
+  letter-spacing: 0.125ch;
+  color: #0f172a;
+}
+
+.user-notification {
+  border-radius: 50%;
+  height: 2.4rem;
+}
+
+.user-avatar {
+  height: 4.8rem;
+  border-radius: 50%;
+}
+
+.welcome {
+  grid-area: welcome;
+  display: grid;
+  grid-template-columns: 6.4rem 1fr;
+  grid-template-areas:
+    "welcome-avatar welcome-greet"
+    "welcome-avatar welcome-user";
+  column-gap: 1.2rem;
+  row-gap: 0.4rem;
+  color: #292524;
+}
+
+.welcome-avatar {
+  height: 6rem;
+  border-radius: 50%;
+  grid-area: welcome-avatar;
+}
+
+.welcome-greet {
+  grid-area: welcome-greet;
+  align-self: end;
+  font-size: 1.4rem;
+}
+
+.welcome-user {
+  grid-area: welcome-user;
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+
+.actions {
+  grid-area: actions;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.btn {
+  border: none;
+  background-color: #0369a1;
+  color: #e0f2fe;
+  font-size: 1.4rem;
+  letter-spacing: 0.2ch;
+  padding: 0.8rem 1.6rem;
+  width: 10rem;
+  border-radius: 3.2rem;
+  transition: transform 50ms ease-in;
+}
+
+.btn:hover {
+  background-color: #0284c7;
+  cursor: pointer;
+  transform: translateY(-0.2rem);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/******************************/
 .main {
   background-color: rgb(38, 134, 218);
   grid-area: main;
