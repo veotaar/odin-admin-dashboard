@@ -5,6 +5,9 @@
   --color-sidebar-bg: #0c4a6e;
   --color-sidebar-text: #f0f9ff;
   --color-item-select: #0369a1;
+
+  --color-main-bg: #e2e8f0; /* slate 200 */
+  --color-card-bg: #f8fafc; /* slate 50 */
 }
 
 * {
@@ -54,7 +57,7 @@ body {
 
 .logo-container {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   padding: var(--padding-logo);
   gap: 1.6rem;
@@ -154,12 +157,12 @@ a:active {
 }
 
 .search-field {
-  background-color: #bfdbfe;
+  background-color: #e5e5e5;
   height: 3.2rem;
   padding: 0.5rem 1rem;
   font-size: 1.8rem;
   width: 100%;
-  border: 1px solid #93c5fd;
+  border: 1px solid #d4d4d4;
   border-radius: 1.6rem;
 }
 
@@ -235,7 +238,7 @@ a:active {
 .btn:hover {
   background-color: #0284c7;
   cursor: pointer;
-  transform: translateY(-0.2rem);
+  transform: translateY(-0.15rem);
 }
 
 .btn:active {
@@ -243,7 +246,52 @@ a:active {
 }
 
 /******************************/
+/*************MAIN*************/
 .main {
-  background-color: rgb(38, 134, 218);
+  background-color: var(--color-main-bg);
   grid-area: main;
+  padding: 2.4rem;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.projects-title {
+  margin-bottom: 1rem;
+}
+
+.projects-container {
+  display: grid;
+  gap: 2.4rem;
+  grid-auto-rows: 20rem;
+  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+  
+}
+
+.projects-card {
+  background-color: var(--color-card-bg);
+  border-radius: 7px;
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 6px -1px rgba(0,0,0,0.1) , 0px 2px 4px -1px rgba(0,0,0,0.06); 
+  border-left: 7px solid var(--color-item-select);
+}
+
+.project-name {
+  margin-bottom: .8rem;
+}
+
+.project-actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: end;
+  gap: 1.4rem;
+
+  
+}
+
+.project-action-icon {
+  height: 2.4rem;
+  
 }
